@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>红旅漫画</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--
+media queries 媒体查询
+-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- hack写法 当lt less than 小于 ie9的时候  -->
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <script src="lib/js/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--最外层的盒子-->
+<div class="hl_container">
+
+    <!--头部搜索栏start-->
+    <div class="hl_topSearch">
+        <h3>红旅漫画</h3>
+        <!--左侧按钮-->
+        <div class="hl_topSearch_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!--搜索图标-->
+        <div class="hl_topSearch_searchIcon">
+            <span class="glyphicon glyphicon-search"></span>
+        </div>
+    </div>
+    <!--头部搜索栏end-->
+
+    <!--轮播图 start-->
+    <div class="hl_banner">
+    </div>
+    <!--轮播图 end-->
+
+    <!--主体部分 start-->
+    <div class="hl_main">
+        <div class="hl_main_nav">
+            <span class="active">新增连载</span>
+            <span>新增完结</span>
+            <span>推荐连载</span>
+            <span>推荐完结</span>
+        </div>
+        <div class="h1_main_content">
+        </div>
+    </div>
+    <!--主体部分 end-->
+
+
+</div>
+</body>
+<!-- 导入 zepto框架 -->
+<script type="text/javascript" src='js/zepto/zepto.min.js'></script>
+<!-- 导入动画模块 提供了 animate方法 -->
+<script type="text/javascript" src='js/zepto/fx.js'></script>
+<!-- 导入touch.js 才能够绑定 滑动事件 -->
+<script type="text/javascript" src='js/zepto/touch.js'></script>
+<script type="text/javascript" src='js/zepto/selector.js'></script>
+<script type="text/javascript" src='js/template-native.js'></script>
+
+<!--轮播图模板-->
+<script type="text/hl" id="template1">
+<ul class="clearfix banner_images">
+     <li>
+            <a href="<%= array[array.length-1].url %>" >
+                <img src="<%= array[array.length-1].img %>">
+            </a>
+            <div class="banner_bottom"><span> <%= array[array.length-1].title %> </span></div>
+    </li>
+    <% for (var i=0;i<array.length;i++){ %>
+        <li>
+            <a href="<%= array[i].url %>" >
+                <img src="<%= array[i].img %>">
+            </a>
+            <div class="banner_bottom"><span> <%= array[i].title %> </span></div>
+        </li>
+    <% } %>
+
+
+    <li>
+            <a href="<%= array[0].url %>" >
+                <img src="<%= array[0].img %>">
+            </a>
+            <div class="banner_bottom"> <span><%= array[0].title %></span> </div>
+    </li>
+</ul>
+<ul class="clearfix banner_index">
+      <% for (var i=0;i<array.length;i++){ %>
+           <li></li>
+     <% } %>
+</ul>
+
+</script>
+
+<!--主体模板-->
+<script type="text/hl" id="template2">
+    <ul class="main_items">
+        <% for(var i=0;i<array.length;i++){%>
+            <li>
+                <a href="<%=array[i].url%>">
+                    <div>
+                        <img src="<%=array[i].img%>" >
+                        <span class="items_update"><%=array[i].update%></span>
+                    </div>
+                <span class="items_name"><%=array[i].name%></span>
+                </a>
+            </li>
+        <%}%>
+    </ul>
+</script>
+
+<script type="text/javascript" src='js/index.js'></script>
+</html>
