@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes spin { to { transform: rotate(1turn); } }
+        @keyframes radius { 50% { border-radius: 50%; } }
+        @keyframes color { 33% { color: orange; } 66% { color: #34ff8d
+                                                  } }
+        @keyframes width { 50% { border-width: .3em; } }
+
+        .loading:before {
+            content: '';
+            display: block;
+            width: 4em;
+            height: 4em;
+            margin: 0 auto 1em;
+            border: 1.5em solid;
+            color: yellowgreen;
+            box-sizing: border-box;
+            animation: 1s spin, .7s radius, 1.1s color, 1.3s width;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .loading {
+            margin: auto;
+        }
+
+        /*<!--body {*/
+                /*margin: 0;*/
+                /*display: flex;*/
+                /*min-height: 100vh;*/
+                /*text-align: center;*/
+                /*background: #655;*/
+                /*color: white;*/
+            /*}-->*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            height:700px;
+            /*background-color: red;*/
+            position: relative;
+        }
+        div.de-emphasized {
+            -webkit-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .left{
+            position: absolute;
+            z-index: 10;
+            left:-100%;
+            top: 0;
+            width: 100%;
+            height: 700px;
+            background-color: green;
+        }
+        .move{
+            transition:all 1s;
+            transform: translateX(80%);
+        }
+        .move1{
+            transition:all 1s;
+            transform: translateX(0 );
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+
+</div>
+<div class="box">
+    <button> hahah</button>
+    <p class="loading">Loading…</p>
+</div>
+
+<script>
+    var box=document.querySelector(".box");
+    var left=document.querySelector('.left');
+    var btn=document.querySelector('button');
+    btn.onclick= function (e) {
+        box.className="box move";
+        left.className="left move";
+        left.setAttribute('open', '');
+        box.classList.add('de-emphasized');
+        e.stopPropagation();
+    }
+    box.onclick= function (e) {
+        box.className="box move1";
+        left.className="left move1";
+//        e.stopPropagation();
+        left.removeAttribute('open');
+        box.classList.remove('de-emphasized');
+
+    }
+
+</script>
+</body>
+</html>

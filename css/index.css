@@ -1,4 +1,55 @@
+body,
+html {
+  height: 100%;
+}
+.floats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  z-index: 100;
+}
+.move {
+  transition: all 1s;
+  transform: translateX(70%);
+}
+.move2 {
+  transition: all 1s;
+  transform: translateX(100%);
+}
+.move1 {
+  transition: all 1s;
+  transform: translateX(0%);
+}
+.side_bar {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  left: -70%;
+  top: 0;
+  background-color: #ffffff;
+}
+.side_bar > .side_bar_logo {
+  height: 150px;
+}
+.side_bar > ul > li {
+  padding-left: 30px;
+  padding-right: 20px;
+  height: 30px;
+  color: firebrick;
+  font: 14px/30px "microsoft yahei";
+}
+.side_bar > ul > li > span {
+  font: 600 14px/30px "宋体";
+  float: right;
+}
 .hl_container {
+  position: relative;
   width: 100%;
   /* 限制 最大 最小值 */
   max-width: 640px;

@@ -69,18 +69,18 @@ input{
 
 /* 定义 公共的 线段 class */
 .b_l{
-    border-left: 1px solid #eee;
+    border-left: 1px solid #ddd;
 }
 .b_t{
-    border-top: 1px solid #eee;
+    border-top: 1px solid #ddd;
 }
 
 .b_b{
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
 
 .b_r{
-    border-right: 1px solid #eee;
+    border-right: 1px solid #ddd;
 }
 
 .active{

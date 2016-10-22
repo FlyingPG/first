@@ -22,6 +22,19 @@ media queries 媒体查询
 </head>
 
 <body>
+<!--左边侧边栏-->
+<div class="side_bar">
+    <div class="side_bar_logo">
+
+    </div>
+    <ul>
+        <li class="b_t">连载动漫-get<span> ></span></li>
+        <li class="b_t">新闻列表-get<span> ></span></li>
+        <li class="b_t">专题列表-get<span> ></span></li>
+        <li class="b_t b_b">关于<span> ></span></li>
+    </ul>
+</div>
+<div class="float"></div>
 <!--最外层的盒子-->
 <div class="hl_container">
 
@@ -43,6 +56,14 @@ media queries 媒体查询
 
     <!--轮播图 start-->
     <div class="hl_banner">
+        <!--<ul class="clearfix banner_images">-->
+            <!--<li>-->
+                <!--<a href="<%= array[array.length-1].url %>">-->
+                    <!--<img src="<%= array[array.length-1].img %>">-->
+                <!--</a>-->
+                <!--<div class="banner_bottom"><span> <%= array[array.length-1].title %> </span></div>-->
+            <!--</li>-->
+        <!--</ul>-->
     </div>
     <!--轮播图 end-->
 
@@ -103,6 +124,7 @@ media queries 媒体查询
      <% } %>
 </ul>
 
+
 </script>
 
 <!--主体模板-->
@@ -120,6 +142,7 @@ media queries 媒体查询
             </li>
         <%}%>
     </ul>
+
 </script>
 
 <script type="text/javascript" src='js/index.js'></script>
