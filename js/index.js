@@ -1,13 +1,7 @@
 /**
  * Created by Administrator on 2016/10/20 0020.
  */
- window.onload = function () {
-     init();
-     main();
-     lunbo();
-    sidebar();
-    // comicStrip();
-}
+
 
 // 初始化开始
 function init() {
