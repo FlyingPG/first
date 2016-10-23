@@ -1,7 +1,13 @@
 /**
  * Created by Administrator on 2016/10/20 0020.
  */
-
+ window.onload = function () {
+     init();
+     main();
+     lunbo();
+    sidebar();
+    // comicStrip();
+}
 
 // 初始化开始
 function init() {
@@ -175,47 +181,18 @@ function banner(array) {
 // 主体开始
 function main() {
     //初始化
+    // var hl_main_nav=document.querySelector('.hl_main_nav');
 
-
-    $.getJSON('http://127.0.0.1:9090/api/gethometab/1', function (data) {
-        var html = template("template2", {array: data});
-        $(".h1_main_content").html(html);
-    })
-
-
-    $(".hl_main_nav span").eq(0).on("click", function () {
-        $.getJSON('http://127.0.0.1:9090/api/gethometab/1', function (data) {
+    $(".hl_main_nav span").on("click", function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        var x=this.dataset['index'];
+        console.log(this);
+        $.getJSON("http://127.0.0.1:9090/api/gethometab/"+x, function (data) {
             var html = template("template2", {array: data});
             $(".h1_main_content").html(html);
         })
-        $(this).addClass("active").siblings().removeClass("active");
     })
-
-
-    $(".hl_main_nav span").eq(1).on("click", function () {
-        $.getJSON('http://127.0.0.1:9090/api/gethometab/2', function (data) {
-            var html = template("template2", {array: data});
-            $(".h1_main_content").html(html);
-        })
-        $(this).addClass("active").siblings().removeClass("active");
-
-    })
-    $(".hl_main_nav span").eq(2).on("click", function () {
-        $.getJSON('http://127.0.0.1:9090/api/gethometab/3', function (data) {
-            var html = template("template2", {array: data});
-            $(".h1_main_content").html(html);
-        })
-        $(this).addClass("active").siblings().removeClass("active");
-
-    })
-    $(".hl_main_nav span").eq(3).on("click", function () {
-        $.getJSON('http://127.0.0.1:9090/api/gethometab/4', function (data) {
-            var html = template("template2", {array: data});
-            $(".h1_main_content").html(html);
-        })
-        $(this).addClass("active").siblings().removeClass("active");
-
-    })
+    $(".hl_main_nav span").eq(0).click();
 }
 // 主体结束
 
