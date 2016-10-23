@@ -38,7 +38,8 @@ media queries 媒体查询
 <div class="float"></div>
 <!--连载漫画-->
 <div class="hl_comic_strip">
-
+    <h3><span class="h1_cs_back"> < </span>连载动漫</h3>
+    <div class="hl_cs_main"></div>
 </div>
 <!--最外层的盒子-->
 <div class="hl_container">
@@ -153,7 +154,7 @@ media queries 媒体查询
     <ul class="comic_strip">
     <%for(var i=0;i<array.length;i++){%>
           <a href="<%=array[i].url%>">
-          <li>
+          <li class="clearfix">
                 <div class="comic_strip_left">
                     <img src="<%=array[i].img%>" alt="">
                 </div>

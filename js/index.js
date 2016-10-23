@@ -1,12 +1,12 @@
 /**
  * Created by Administrator on 2016/10/20 0020.
  */
- window.onload = function () {
-     init();
-     main();
-     lunbo();
+window.onload = function () {
+    init();
+    main();
+    lunbo();
     sidebar();
-    // comicStrip();
+    comicStrip();
 }
 
 // 初始化开始
@@ -185,9 +185,9 @@ function main() {
 
     $(".hl_main_nav span").on("click", function () {
         $(this).addClass("active").siblings().removeClass("active");
-        var x=this.dataset['index'];
+        var x = this.dataset['index'];
         console.log(this);
-        $.getJSON("http://127.0.0.1:9090/api/gethometab/"+x, function (data) {
+        $.getJSON("http://127.0.0.1:9090/api/gethometab/" + x, function (data) {
             var html = template("template2", {array: data});
             $(".h1_main_content").html(html);
         })
@@ -200,36 +200,46 @@ function main() {
 function sidebar() {
     var left = document.querySelector('.side_bar');
     var container = document.querySelector('.hl_container');
-    var btn=document.querySelector('.hl_topSearch_btn');
-    var float=document.querySelector('.float');
-    btn.onclick= function (e) {
+    var btn = document.querySelector('.hl_topSearch_btn');
+    var float = document.querySelector('.float');
+    btn.onclick = function (e) {
         container.className = "hl_container move";
         left.className = "side_bar move2";
-        float.className="float floats move"
+        float.className = "float floats move"
         e.stopPropagation();
     }
-    float.onclick= function () {
-        this.className="float move1";
-        container.className="hl_container move1";
+    float.onclick = function () {
+        this.className = "float move1";
+        container.className = "hl_container move1";
         left.className = "side_bar move1";
     }
 }
 //侧边栏结束
 
 // 连载漫画开始
-// function comicStrip() {
-//     var lis1=document.querySelector('.lis1');
-//     var hl_comic_strip=document.querySelector('.hl_comic_strip');
-//     var side_bar=document.querySelector('.side_bar');
-//     lis1.onclick= function () {
-//         $.getJSON('http://127.0.0.1:9090/api/getlianzai', function (data) {
-//             console.log(1111);
-//             var html = template("template3", {array: data});
-//             hl_comic_strip.className="move3 hl_comic_strip";
-//             side_bar.className=" side_bar move4";
-//             $(".hl_comic_strip").html(html);
-//
-//         });
-//     }
-// }
+function comicStrip() {
+    var lis1 = document.querySelector('.lis1');
+    var hl_cs_main = document.querySelector('.hl_cs_main');
+    var side_bar = document.querySelector('.side_bar');
+    $('.lis1').on('click', function () {
+        console.log(1);
+        $(".float").removeClass();
+        $(".hl_container").removeClass("move");
+        $.getJSON('http://127.0.0.1:9090/api/getlianzai', function (data) {
+            var html = template("template3", {array: data});
+            $(".hl_cs_main").html(html);
+        });
+        $('.side_bar').removeClass("move2");
+        $(".hl_comic_strip").css({
+            transform: "translateX(-100%)"
+        })
+    })
+    $('.h1_cs_back').on('click', function () {
+            $(".hl_comic_strip").css({
+                transition: "0s",
+                transform: "translateX(100%)"
+            })
+        }
+    )
+}
 // 连载漫画结束
