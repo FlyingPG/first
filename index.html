@@ -25,16 +25,21 @@ media queries 媒体查询
 <!--左边侧边栏-->
 <div class="side_bar">
     <div class="side_bar_logo">
-
+        <img src="images/logo.png"  alt="">
     </div>
     <ul>
-        <li class="b_t">连载动漫-get<span> ></span></li>
-        <li class="b_t">新闻列表-get<span> ></span></li>
-        <li class="b_t">专题列表-get<span> ></span></li>
-        <li class="b_t b_b">关于<span> ></span></li>
+        <li class="b_t lis1">连载动漫-get<span> ></span></li>
+        <li class="b_t lis2">新闻列表-get<span> ></span></li>
+        <li class="b_t lis3">专题列表-get<span> ></span></li>
+        <li class="b_t b_b lis4">关于<span> ></span></li>
     </ul>
 </div>
+<!--遮罩层-->
 <div class="float"></div>
+<!--连载漫画-->
+<div class="hl_comic_strip">
+
+</div>
 <!--最外层的盒子-->
 <div class="hl_container">
 
@@ -144,6 +149,24 @@ media queries 媒体查询
     </ul>
 
 </script>
-
+<script type="text/hl" id="template3">
+    <ul class="comic_strip">
+    <%for(var i=0;i<array.length;i++){%>
+          <a href="<%=array[i].url%>">
+          <li>
+                <div class="comic_strip_left">
+                    <img src="<%=array[i].img%>" alt="">
+                </div>
+                <div class="comic_strip_right">
+                    <p class="csr_name"><%=array[i].name%></p>
+                    <p class="csr_episode"><%=array[i].episode%></p>
+                    <p class="csr_updateTime"><%=array[i].updateTime%></p>
+                    <p class="csr_downloadCount">下载次数:<%=array[i].downloadCount%></p>
+                </div>
+          </li>
+          </a>
+    <%}%>
+</ul>
+</script>
 <script type="text/javascript" src='js/index.js'></script>
 </html>

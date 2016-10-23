@@ -5,7 +5,8 @@ window.onload = function () {
     init();
     main();
     lunbo();
-    sidebar()
+    sidebar();
+    // comicStrip();
 }
 
 // 初始化开始
@@ -232,14 +233,32 @@ function sidebar() {
     var float=document.querySelector('.float');
     btn.onclick= function (e) {
         container.className = "hl_container move";
-        left.className = "side_bar move";
+        left.className = "side_bar move2";
         float.className="float floats move"
         e.stopPropagation();
     }
     float.onclick= function () {
         this.className="float move1";
         container.className="hl_container move1";
-        left.className = "side_bar move2";
+        left.className = "side_bar move1";
     }
 }
 //侧边栏结束
+
+// 连载漫画开始
+// function comicStrip() {
+//     var lis1=document.querySelector('.lis1');
+//     var hl_comic_strip=document.querySelector('.hl_comic_strip');
+//     var side_bar=document.querySelector('.side_bar');
+//     lis1.onclick= function () {
+//         $.getJSON('http://127.0.0.1:9090/api/getlianzai', function (data) {
+//             console.log(1111);
+//             var html = template("template3", {array: data});
+//             hl_comic_strip.className="move3 hl_comic_strip";
+//             side_bar.className=" side_bar move4";
+//             $(".hl_comic_strip").html(html);
+//
+//         });
+//     }
+// }
+// 连载漫画结束

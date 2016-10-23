@@ -23,9 +23,15 @@ body, html {
   transform: translateX(100%);
 
 }
+.move3{
+  transform: translateX(100%);
 
+}
 .move1 {
   transition: all 1s;
+  transform: translateX(0%);
+}.move4 {
+  //transition: all 1s;
   transform: translateX(0%);
 }
 
@@ -38,11 +44,13 @@ body, html {
   top: 0;
   background-color: #ffffff;
   >.side_bar_logo{
-    height: 150px;
-
+    width: 100%;
+    >img{
+      width: 100%;
+    }
   }
   >ul{
-
+    margin-top: 40px;
     >li{
       padding-left: 30px;
       padding-right: 20px;
@@ -68,6 +76,12 @@ body, html {
   /* 居中 */
   margin: 0 auto;
   padding: 0;
+  .hl_comic_strip{
+    position: absolute;
+    left:-100%;
+    top: 0;
+    z-index:100;
+  }
 }
 
 .hl_topSearch {
