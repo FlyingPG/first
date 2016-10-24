@@ -33,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2639">
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="240" column="8" selection-start-line="240" selection-start-column="8" selection-end-line="240" selection-end-column="8" />
+            <state relative-caret-position="348">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding>
                 <element signature="n#!!block;n#lunbo#0" expanded="false" />
                 <element signature="n#!!block;n#banner#0" expanded="false" />
@@ -112,8 +112,8 @@
         <option value="$PROJECT_DIR$/css/base.css" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/css/index.less" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -328,15 +328,15 @@
       <workItem from="1477148253715" duration="4256000" />
       <workItem from="1477222288332" duration="682000" />
       <workItem from="1477231758505" duration="10214000" />
-      <workItem from="1477268711918" duration="1712000" />
+      <workItem from="1477268711918" duration="2316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64719000" />
+    <option name="totallyTimeSpent" value="65323000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="754" extended-state="1" />
+    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15263158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -793,20 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="240" column="8" selection-start-line="240" selection-start-column="8" selection-end-line="240" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!block;n#lunbo#0" expanded="false" />
-            <element signature="n#!!block;n#banner#0" expanded="false" />
-            <element signature="n#!!block;n#main#0" expanded="false" />
-            <element signature="n#!!block;n#sidebar#0" expanded="false" />
-            <element signature="n#!!block;n#comicStrip#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2639">
@@ -815,6 +801,20 @@
             <element signature="e#1293#2717#0" expanded="false" />
             <element signature="e#3415#4529#0" expanded="false" />
             <element signature="e#4540#6093#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!block;n#lunbo#0" expanded="false" />
+            <element signature="n#!!block;n#banner#0" expanded="false" />
+            <element signature="n#!!block;n#main#0" expanded="false" />
+            <element signature="n#!!block;n#sidebar#0" expanded="false" />
+            <element signature="n#!!block;n#comicStrip#0" expanded="false" />
           </folding>
         </state>
       </provider>

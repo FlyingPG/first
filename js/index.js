@@ -9,11 +9,10 @@ window.onload = function () {
     comicStrip();
 }
 
-// 初始化开始
-// function init() {
-//     $("")
-// }
-// 初始化结束
+初始化开始
+function init() {
+}
+初始化结束
 
 
 
@@ -238,7 +237,7 @@ function comicStrip() {
 // 专题页面开始
 function special() {
     $(".list2").on("click", function () {
-        
+
     })
 }
 // 专题页面结束
