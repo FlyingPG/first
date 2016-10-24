@@ -41,6 +41,12 @@ media queries 媒体查询
     <h3><span class="h1_cs_back"> < </span>连载动漫</h3>
     <div class="hl_cs_main"></div>
 </div>
+
+<!--主题-->
+<div class="hl_specials">
+    <h3><span class="specials_back"> < </span>专题列表</h3>
+    <div class="specials"></div>
+</div>
 <!--最外层的盒子-->
 <div class="hl_container">
 
@@ -168,6 +174,19 @@ media queries 媒体查询
           </a>
     <%}%>
 </ul>
+</script>
+<script type="text/hl" id="template4">
+    <ul class="special">
+
+        <%for(var i=0;i<array.length;i++){%>
+             <li class="clearfix">
+                <a href="<%=array[i].url%>">
+                    <img src="<%=array[i].img%>" alt="">
+                    <p class="special_name"><%=array[i].title%></p>
+                </a>
+             </li>
+        <%}%>
+    </ul>
 </script>
 <script type="text/javascript" src='js/index.js'></script>
 </html>

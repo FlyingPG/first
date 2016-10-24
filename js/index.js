@@ -2,17 +2,18 @@
  * Created by Administrator on 2016/10/20 0020.
  */
 window.onload = function () {
-    init();
+    // init();
     main();
     lunbo();
     sidebar();
     comicStrip();
+    special();
 }
 
-初始化开始
-function init() {
-}
-初始化结束
+// 初始化开始
+// function init() {
+// }
+// 初始化结束
 
 
 
@@ -191,36 +192,59 @@ function main() {
 
 //侧边栏开始
 function sidebar() {
-    var left = document.querySelector('.side_bar');
-    var container = document.querySelector('.hl_container');
-    var btn = document.querySelector('.hl_topSearch_btn');
-    var float = document.querySelector('.float');
-    btn.onclick = function (e) {
-        container.className = "hl_container move";
-        left.className = "side_bar move2";
-        float.className = "float floats move"
+    $(".hl_topSearch_btn").on("click", function (e) {
+        $('.hl_container').css({
+            position:"fixed",
+            transition: "all 1s",
+            transform: "translateX(70%)"
+        })
+        $(".side_bar").css({
+            transition: "all 1s",
+            transform: "translateX(100%)",
+        })
+        $('.float').addClass("floats").css({
+            transition: "all 1s",
+            transform: "translateX(70%)"
+        });
         e.stopPropagation();
+    })
+
     }
-    float.onclick = function () {
-        this.className = "float move1";
-        container.className = "hl_container move1";
-        left.className = "side_bar move1";
-    }
-}
+    $('.float').on("click", function () {
+        $(this).css({
+            transition: "all 1s",
+            transform: "translateX(0%)"
+        }).removeClass("floats");
+        $('.hl_container').css({
+            position:"relative",
+            transition: "all 1s",
+            transform: "translateX(0%)"
+        })
+        $('.side_bar').css({
+            transition: "all 1s",
+            transform: "translateX(0%)"
+        })
+    })
 //侧边栏结束
 
 // 连载漫画开始
 function comicStrip() {
     $('.lis1').on('click', function () {
-        console.log(1);
-        $(".float").removeClass();
-        $(".hl_container").removeClass("move");
+        $(".float").removeClass("floats").css({
+            transform:"translateX(0%)",
+        });
+        $(".hl_container").css({
+            transform:"translateX(0%)"
+        })
         $.getJSON('http://127.0.0.1:9090/api/getlianzai', function (data) {
             var html = template("template3", {array: data});
             $(".hl_cs_main").html(html);
         });
-        $('.side_bar').removeClass("move2");
+        $('.side_bar').css({
+            transform: "translateX(0%)"
+        })
         $(".hl_comic_strip").css({
+            display:"block",
             transform: "translateX(-100%)"
         })
     })
@@ -236,9 +260,32 @@ function comicStrip() {
 
 // 专题页面开始
 function special() {
-    $(".list2").on("click", function () {
-
+    $(".lis3").on("click", function () {
+        $(".float").removeClass("floats").css({
+            transform:"translateX(0%)",
+        });
+        $(".hl_container").css({
+            transform:"translateX(0%)"
+        })
+        $.getJSON('http://127.0.0.1:9090/api/gettopics', function (data) {
+            var html = template("template4", {array: data});
+            $(".specials").html(html);
+        });
+        $('.side_bar').css({
+            transform: "translateX(0%)"
+        })
+        $(".hl_specials").css({
+            display:"block",
+            transform: "translateX(-100%)"
+        })
     })
+    $('.specials_back').on('click', function () {
+            $(".hl_specials").css({
+                transition: "0s",
+                transform: "translateX(100%)"
+            })
+        }
+    )
 }
 // 专题页面结束
 

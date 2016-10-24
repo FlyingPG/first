@@ -1,9 +1,10 @@
 body, html {
+  width: 100%;
   height: 100%;
 }
 
 .floats {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,45 +15,19 @@ body, html {
   z-index: 100;
 }
 
-.move {
-  transition: all 1s;
-  transform: translateX(70%);
-}
-.move_ {
-  transition: all 1s;
-  transform: translateX(70%);
-}
-
-.move2 {
-  transition: all 1s;
-  transform: translateX(100%);
-
-}
-.move3 {
-  transform: translateX(100%);
-
-}
-.move1 {
-  transition: all 1s;
-  transform: translateX(0%);
-}s
-.move4 {
-  //transition: all 1s;
-  transform: translateX(0%);
-}
-
 .side_bar {
   width: 70%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: -70%;
-  top: 0;
+  top: 0px;
   background-color: #ffffff;
   > .side_bar_logo {
     width: 100%;
     > img {
       width: 100%;
+
     }
   }
   > ul {
@@ -83,8 +58,11 @@ body, html {
   /* 居中 */
   margin: 0 auto;
   padding: 0;
+  top: 0;
+  left: 0;
 
 }
+
 //连载漫画
 .hl_comic_strip {
   width: 100%;
@@ -93,13 +71,14 @@ body, html {
   top: 0;
   z-index: 100;
   background-color: #ffffFF;
+  display: none;
   > h3 {
     height: 40px;
     margin: 0;
-    font:20px/40px "microsoft yahei";
+    font: 20px/40px "microsoft yahei";
     text-align: center;
     padding-right: 20px;
-    border-bottom:2px solid grey;
+    border-bottom: 2px solid grey;
     background-color: #ddd;
     > .h1_cs_back {
       float: left;
@@ -107,47 +86,47 @@ body, html {
       font: 600 20px/40px "宋体";
     }
   }
-  >.hl_cs_main{
+  > .hl_cs_main {
 
-    >.comic_strip{
+    > .comic_strip {
       width: 100%;
-      >a{
+      > a {
         display: block;
         width: 100%;
-        >li{
+        > li {
           font-family: "microsoft yahei";
           color: #000000;
-          border-bottom:1px solid grey;
+          border-bottom: 1px solid grey;
           padding: 10px 0;
           width: 100%;
           height: 100%;
-          >.comic_strip_left{
+          > .comic_strip_left {
             padding-left: 10px;
             width: 25%;
             float: left;
-            >img{
+            > img {
               width: 100%;
             }
           }
-          >.comic_strip_right{
+          > .comic_strip_right {
             padding-left: 10px;
             width: 75%;
             float: right;
-            >.csr_name{
+            > .csr_name {
               font-weight: 600;
               font-size: 1.2em;
               height: 25%;
               margin-top: 10px;
             }
-            >.csr_episode{
+            > .csr_episode {
               height: 25%;
 
             }
-            >.csr_updateTime{
+            > .csr_updateTime {
               height: 25%;
 
             }
-            >.csr_downloadCount{
+            > .csr_downloadCount {
               height: 25%;
 
             }
@@ -160,7 +139,52 @@ body, html {
 }
 
 //专题页面
+.hl_specials {
+  width: 100%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffFF;
+  display: none;
+  > h3 {
+    height: 40px;
+    margin: 0;
+    font: 20px/40px "microsoft yahei";
+    text-align: center;
+    padding-right: 20px;
+    border-bottom: 2px solid grey;
+    background-color: #ddd;
+    > .specials_back {
+      float: left;
+      margin-left: 20px;
+      font: 600 20px/40px "宋体";
+    }
+  }
+  > .specials {
+    > .special {
+      width: 100%;
+      > li {
+        padding:0 10px;
+        margin-top: 10px;
+        width: 100%;
+        > a {
+          text-decoration: none;
+          width: 100%;
+          > img {
+            width: 100%;
+          }
+          > p {
+            line-height: 40px;
+            width: 100%;
+            border-bottom:1px solid gray;
+          }
+        }
+      }
+    }
+  }
 
+}
 
 .hl_topSearch {
   position: relative;

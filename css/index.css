@@ -1,9 +1,10 @@
 body,
 html {
+  width: 100%;
   height: 100%;
 }
 .floats {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,35 +14,13 @@ html {
   filter: alpha(opacity=20);
   z-index: 100;
 }
-.move {
-  transition: all 1s;
-  transform: translateX(70%);
-}
-.move_ {
-  transition: all 1s;
-  transform: translateX(70%);
-}
-.move2 {
-  transition: all 1s;
-  transform: translateX(100%);
-}
-.move3 {
-  transform: translateX(100%);
-}
-.move1 {
-  transition: all 1s;
-  transform: translateX(0%);
-}
-s .move4 {
-  transform: translateX(0%);
-}
 .side_bar {
   width: 70%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: -70%;
-  top: 0;
+  top: 0px;
   background-color: #ffffff;
 }
 .side_bar > .side_bar_logo {
@@ -75,6 +54,8 @@ s .move4 {
   /* 居中 */
   margin: 0 auto;
   padding: 0;
+  top: 0;
+  left: 0;
 }
 .hl_comic_strip {
   width: 100%;
@@ -83,6 +64,7 @@ s .move4 {
   top: 0;
   z-index: 100;
   background-color: #ffffFF;
+  display: none;
 }
 .hl_comic_strip > h3 {
   height: 40px;
@@ -140,6 +122,49 @@ s .move4 {
 }
 .hl_comic_strip > .hl_cs_main > .comic_strip > a > li > .comic_strip_right > .csr_downloadCount {
   height: 25%;
+}
+.hl_specials {
+  width: 100%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffFF;
+  display: none;
+}
+.hl_specials > h3 {
+  height: 40px;
+  margin: 0;
+  font: 20px/40px "microsoft yahei";
+  text-align: center;
+  padding-right: 20px;
+  border-bottom: 2px solid grey;
+  background-color: #ddd;
+}
+.hl_specials > h3 > .specials_back {
+  float: left;
+  margin-left: 20px;
+  font: 600 20px/40px "宋体";
+}
+.hl_specials > .specials > .special {
+  width: 100%;
+}
+.hl_specials > .specials > .special > li {
+  padding: 0 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+.hl_specials > .specials > .special > li > a {
+  text-decoration: none;
+  width: 100%;
+}
+.hl_specials > .specials > .special > li > a > img {
+  width: 100%;
+}
+.hl_specials > .specials > .special > li > a > p {
+  line-height: 40px;
+  width: 100%;
+  border-bottom: 1px solid gray;
 }
 .hl_topSearch {
   position: relative;
