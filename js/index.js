@@ -10,18 +10,11 @@ window.onload = function () {
 }
 
 // 初始化开始
-function init() {
-    $("")
-}
+// function init() {
+//     $("")
+// }
 // 初始化结束
 
-//头部按钮开始
-function btn() {
-    $(".hl_topSearch_btn").on("click", function () {
-
-    })
-}
-//头部按钮结束
 
 
 // 轮播图开始
@@ -178,6 +171,7 @@ function banner(array) {
     })
 }
 // 轮播图结束
+
 // 主体开始
 function main() {
     //初始化
@@ -218,9 +212,6 @@ function sidebar() {
 
 // 连载漫画开始
 function comicStrip() {
-    var lis1 = document.querySelector('.lis1');
-    var hl_cs_main = document.querySelector('.hl_cs_main');
-    var side_bar = document.querySelector('.side_bar');
     $('.lis1').on('click', function () {
         console.log(1);
         $(".float").removeClass();
@@ -243,3 +234,12 @@ function comicStrip() {
     )
 }
 // 连载漫画结束
+
+// 专题页面开始
+function special() {
+    $(".list2").on("click", function () {
+        
+    })
+}
+// 专题页面结束
+
