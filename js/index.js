@@ -16,7 +16,6 @@ window.onload = function () {
 // 初始化结束
 
 
-
 // 轮播图开始
 function lunbo() {
     $.getJSON('http://127.0.0.1:9090/api/getlunbo', function (data) {
@@ -194,7 +193,7 @@ function main() {
 function sidebar() {
     $(".hl_topSearch_btn").on("click", function (e) {
         $('.hl_container').css({
-            position:"fixed",
+            position: "fixed",
             transition: "all 1s",
             transform: "translateX(70%)"
         })
@@ -209,43 +208,53 @@ function sidebar() {
         e.stopPropagation();
     })
 
-    }
-    $('.float').on("click", function () {
-        $(this).css({
-            transition: "all 1s",
-            transform: "translateX(0%)"
-        }).removeClass("floats");
-        $('.hl_container').css({
-            position:"relative",
-            transition: "all 1s",
-            transform: "translateX(0%)"
-        })
-        $('.side_bar').css({
-            transition: "all 1s",
-            transform: "translateX(0%)"
-        })
+}
+$('.float').on("click", function () {
+    $(this).css({
+        transition: "all 1s",
+        transform: "translateX(0%)"
+    }).removeClass("floats");
+    $('.hl_container').css({
+        position: "relative",
+        transition: "all 1s",
+        transform: "translateX(0%)"
     })
+    $('.side_bar').css({
+        transition: "all 1s",
+        transform: "translateX(0%)"
+    })
+})
 //侧边栏结束
 
 // 连载漫画开始
 function comicStrip() {
     $('.lis1').on('click', function () {
         $(".float").removeClass("floats").css({
-            transform:"translateX(0%)",
+            transform: "translateX(0%)",
         });
-        $(".hl_container").css({
-            transform:"translateX(0%)"
+        $(".hl_comic_strip").css({
+            display: "block",
+            transform: "translateX(-100%)"
         })
-        $.getJSON('http://127.0.0.1:9090/api/getlianzai', function (data) {
-            var html = template("template3", {array: data});
-            $(".hl_cs_main").html(html);
-        });
-        $('.side_bar').css({
+        $(".hl_container").css({
+            transition:"0s",
             transform: "translateX(0%)"
         })
-        $(".hl_comic_strip").css({
-            display:"block",
-            transform: "translateX(-100%)"
+        $('.side_bar').css({
+            transition:"all 1s",
+            transform: "translateX(0%)"
+        })
+
+        $.ajax({
+            url: 'http://127.0.0.1:9090/api/getlianzai',
+            dataType: "json",
+            success: function (data) {
+                setTimeout(function () {
+                    var html = template("template3", {array: data});
+                    $(".hl_cs_main").html(html)
+                }, 1000)
+
+            }
         })
     })
     $('.h1_cs_back').on('click', function () {
@@ -260,23 +269,29 @@ function comicStrip() {
 
 // 专题页面开始
 function special() {
-    $(".lis3").on("click", function () {
+    $(".lis2").on("click", function () {
         $(".float").removeClass("floats").css({
-            transform:"translateX(0%)",
-        });
-        $(".hl_container").css({
-            transform:"translateX(0%)"
-        })
-        $.getJSON('http://127.0.0.1:9090/api/gettopics', function (data) {
-            var html = template("template4", {array: data});
-            $(".specials").html(html);
+            transform: "translateX(0%)",
         });
         $('.side_bar').css({
             transform: "translateX(0%)"
         })
         $(".hl_specials").css({
-            display:"block",
+            display: "block",
             transform: "translateX(-100%)"
+        })
+        $(".hl_container").css({
+            transform: "translateX(0%)"
+        })
+        $.ajax({
+            url: 'http://127.0.0.1:9090/api/gettopics',
+            dataType: "json",
+            success: function (data) {
+                setTimeout(function () {
+                    var html = template("template4", {array: data});
+                    $(".specials").html(html);
+                }, 1000)
+            }
         })
     })
     $('.specials_back').on('click', function () {
