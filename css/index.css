@@ -94,6 +94,7 @@ html {
   width: 100%;
 }
 .hl_comic_strip > .hl_cs_main > .comic_strip > a > li {
+  background-color: #fff;
   font-family: "microsoft yahei";
   color: #000000;
   border-bottom: 1px solid grey;
@@ -118,7 +119,7 @@ html {
   font-weight: 600;
   font-size: 1.2em;
   height: 25%;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 .hl_comic_strip > .hl_cs_main > .comic_strip > a > li > .comic_strip_right > .csr_episode {
   height: 25%;
@@ -157,8 +158,9 @@ html {
   width: 100%;
 }
 .hl_specials > .specials > .special > li {
+  background-color: #fff;
   padding: 0 10px;
-  margin-top: 10px;
+  padding-top: 10px;
   width: 100%;
 }
 .hl_specials > .specials > .special > li > a {

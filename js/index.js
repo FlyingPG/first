@@ -237,11 +237,11 @@ function comicStrip() {
             transform: "translateX(-100%)"
         })
         $(".hl_container").css({
-            transition:"0s",
+            transition: "0s",
             transform: "translateX(0%)"
         })
         $('.side_bar').css({
-            transition:"all 1s",
+            transition: "all 1s",
             transform: "translateX(0%)"
         })
 
@@ -261,6 +261,9 @@ function comicStrip() {
             $(".hl_comic_strip").css({
                 transition: "0s",
                 transform: "translateX(100%)"
+            })
+            $(".hl_container").css({
+                position: "relative"
             })
         }
     )
@@ -298,6 +301,9 @@ function special() {
             $(".hl_specials").css({
                 transition: "0s",
                 transform: "translateX(100%)"
+            })
+            $(".hl_container").css({
+                position: "relative"
             })
         }
     )
